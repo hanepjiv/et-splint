@@ -1,0 +1,14 @@
+[patterns]
+**.h            = NATIVE
+**.c            = NATIVE
+**.hh           = NATIVE
+**.cc           = NATIVE
+**.cpp          = NATIVE
+**.cxx          = NATIVE
+**.hpp          = NATIVE
+
+.classpath      = NATIVE
+**.java         = NATIVE
+**.xml          = NATIVE
+**.cfg          = NATIVE
+**.properties   = NATIVE
