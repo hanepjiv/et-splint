@@ -8,9 +8,9 @@ if [ "x@SPLINT@" = "xSPLINT-NOTFOUND" ]; then
 fi
 
 ret=0
-for e in h c; do
+for e in c; do
     for i in `find ${SRCDIR} -iname \*.$e -print`; do
-        ${SPLINT} -weak $i
+        ${SPLINT} -checks -exportlocal +matchanyintegral $i
         r=$?
         if [ $r -ne 0 ]; then
             ret=$r
