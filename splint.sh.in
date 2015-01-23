@@ -10,7 +10,7 @@ fi
 ret=0
 for e in h c; do
     for i in `find ${SRCDIR} -iname \*.$e -print`; do
-        splint ${SPLINT_FLAGS} -weak $i
+        ${SPLINT} -weak $i
         r=$?
         if [ $r -ne 0 ]; then
             ret=$r
