@@ -7,14 +7,11 @@ if [ "x@SPLINT@" = "xSPLINT-NOTFOUND" ]; then
     #exit 77
 fi
 
-ret=0
-for e in c; do
-    for i in `find ${SRCDIR} -iname \*.$e -print`; do
-        ${SPLINT} -checks -exportlocal +matchanyintegral $i
-        r=$?
-        if [ $r -ne 0 ]; then
-            ret=$r
-        fi
-    done
-done
-exit $ret
+find ${SRCDIR} -type f \
+     \( -name  \*.c \) \
+     -exec ${SPLINT} \
+     -checks \
+     -exportlocal \
+     +matchanyintegral \
+     {} \;
+exit $?
