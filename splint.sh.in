@@ -9,9 +9,6 @@ fi
 
 find ${SRCDIR} -type f \
      \( -name  \*.c \) \
-     -exec ${SPLINT} \
-     -checks \
-     -exportlocal \
-     +matchanyintegral \
-     {} \;
+     -print0 | xargs -0 -n 1 ${SPLINT} \
+     -exportlocal
 exit $?
