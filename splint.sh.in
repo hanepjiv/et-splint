@@ -31,6 +31,5 @@ fi
 
 find ${SRCDIR} -type f \
      \( -name  \*.c \) \
-     -print0 | xargs -0 -n 1 ${SPLINT} \
-     -exportlocal
+     -print0 | xargs -0 -n 1 ${SPLINT} -noeffect
 exit $?
