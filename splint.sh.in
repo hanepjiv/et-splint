@@ -1,17 +1,17 @@
 #!/bin/env sh
 # -*- mode:sh; coding:utf-8-unix; -*-
 
-##  @file make.sh
-##  @brief make.sh
+##  @file splint.sh.in
+##  @brief splint.sh.in
 ##
-##  debug.h
+##  splint.sh.in
 ##
 ##  Copyright 2014 hanepjiv
 ##
 ##  @author hanepjiv <hanepjiv@gmail.com>
 ##  @copyright The MIT License (MIT)
 ##  @since 2014/06/24
-##  @date 2016/05/11
+##  @date 2018/01/30
 
 if [ "x@SPLINT@" = "xSPLINT-NOTFOUND" ]; then
     echo SKIP!
