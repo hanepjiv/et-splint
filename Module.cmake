@@ -10,17 +10,17 @@
 ##  @author hanepjiv <hanepjiv@gmail.com>
 ##  @copyright The MIT License (MIT)
 ##  @since 2014/06/24
-##  @date 2018/01/30
+##  @date 2023/10/07
 
 find_program(SPLINT splint)
 if(NOT SPLINT)
   message(FATAL_ERROR "Test feature requires splint.")
 endif()
 message(STATUS "${SPLINT}")
-configure_file(${abs_top_srcdir}/tools/et-splint/splint.sh.in
-  tools/et-splint/splint.sh @ONLY)
+configure_file(${abs_top_srcdir}/../dependencies/et-splint/splint.sh.in
+  ${CMAKE_CURRENT_BINARY_DIR}/dependencies/et-splint/splint.sh @ONLY)
 set(SPLINT_FLAGS "")
 foreach(loop_var IN LISTS ET_SPLINT_INCLUDE_DIRS)
   set(SPLINT_FLAGS "${SPLINT_FLAGS} -I ${loop_var}")
 endforeach()
-set(SPLINT_SH /bin/env sh ${CMAKE_CURRENT_BINARY_DIR}/tools/et-splint/splint.sh)
+set(SPLINT_SH /bin/env sh ${CMAKE_CURRENT_BINARY_DIR}/dependencies/et-splint/splint.sh)
